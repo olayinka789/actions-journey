@@ -6,3 +6,13 @@ jobs:
     steps:
       - name: Say hello
         run: echo "Hello from GitHub Actions"
+  context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Describe Events
+        run: |
+          echo "Repo: ${{github.ref}}"
+          echo "Branch: ${{github.ref_name}}"
+          echo "Commit: ${{github.sha}}"
+          echo "Events: ${{github.event_name}}"
+          echo "Triggered-by: ${{github.actor}}"
